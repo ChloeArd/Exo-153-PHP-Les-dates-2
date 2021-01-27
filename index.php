@@ -51,10 +51,8 @@ echo "<br><br>";
 
 ##Exercice 6 Afficher le nombre de jours dans le mois de février de l'année 2016.
 $mois = mktime( 0, 0, 0, 02, 1, 2016 );
-echo "Le mois de ".date("F Y",$mois)." possède ".date("t",$mois)." jours";
+echo "Le mois de ".date("F Y",$mois)." possèdait ".date("t",$mois)." jours";
 echo "<br><br>";
-
-
 
 ##Exercice 7 Afficher la date du jour + 20 jours.
 $date = new DateTime('27-01-2021');
@@ -71,5 +69,38 @@ echo "<br><br>";
 ## TP Faire un formulaire avec deux listes déroulantes.
 ## La première sert à choisir le mois, et le deuxième permet d'avoir l'année.
 # MEGA BONUS ( surligné et caractère gras :-)  ) : En fonction des choix, afficher un calendrier ( voir libs JS ou autres )
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <label for="month">Mois</label>
+    <select  id="month">
+        <?php
+        $mois = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        for($i = 0; $i < 12; $i++){
+            echo "<option>$mois[$i] </option>";
+        }
+        ?>
+    </select>
 
+    <label for="year">Années</label>
+    <select  id="year">
+        <?php
+        $year = [2018, 2019, 2020, 2021];
+        for($i = 0; $i < 4; $i++){
+            echo "<option>$year[$i] </option>";
+        }
 
+        ?>
+    </select>
+</form>
+</body>
+</html>
